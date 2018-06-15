@@ -1,0 +1,142 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 749
+  ClientWidth = 691
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxMemo_barcode: TcxMemo
+    Left = 0
+    Top = 0
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+    Lines.Strings = (
+      'cxMemo_barcode')
+    TabOrder = 0
+    Height = 741
+    Width = 201
+  end
+  object cxButtonGen: TcxButton
+    Left = 216
+    Top = 8
+    Width = 97
+    Height = 50
+    Caption = #29983#25104#26465#30721
+    TabOrder = 1
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+  end
+  object cxButton2: TcxButton
+    Left = 216
+    Top = 63
+    Width = 97
+    Height = 50
+    Caption = #28165#31354#26465#30721
+    TabOrder = 2
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+  end
+  object cxButton1: TcxButton
+    Left = 216
+    Top = 119
+    Width = 97
+    Height = 50
+    Caption = #23548#20986
+    TabOrder = 3
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+  end
+  object frxPreview1: TfrxPreview
+    Left = 328
+    Top = 8
+    Width = 355
+    Height = 733
+    BevelKind = bkFlat
+    OutlineVisible = True
+    OutlineWidth = 121
+    ThumbnailVisible = False
+    UseReportHints = True
+  end
+  object frxReport1: TfrxReport
+    Version = '5.4.6'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = #39044#35774
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43266.720402430550000000
+    ReportOptions.LastChange = 43266.720402430550000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 240
+    Top = 192
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxDesigner1: TfrxDesigner
+    DefaultScriptLanguage = 'PascalScript'
+    DefaultFont.Charset = DEFAULT_CHARSET
+    DefaultFont.Color = clWindowText
+    DefaultFont.Height = -13
+    DefaultFont.Name = 'Arial'
+    DefaultFont.Style = []
+    DefaultLeftMargin = 10.000000000000000000
+    DefaultRightMargin = 10.000000000000000000
+    DefaultTopMargin = 10.000000000000000000
+    DefaultBottomMargin = 10.000000000000000000
+    DefaultPaperSize = 9
+    DefaultOrientation = poPortrait
+    GradientEnd = 11982554
+    GradientStart = clWindow
+    TemplatesExt = 'fr3'
+    Restrictions = []
+    RTLLanguage = False
+    MemoParentFont = False
+    Left = 240
+    Top = 400
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    BCDToCurrency = False
+    Left = 240
+    Top = 256
+  end
+  object kbmMemTable1: TkbmMemTable
+    DesignActivation = True
+    AttachedAutoRefresh = True
+    AttachMaxCount = 1
+    FieldDefs = <>
+    IndexDefs = <>
+    SortOptions = []
+    PersistentBackup = False
+    ProgressFlags = [mtpcLoad, mtpcSave, mtpcCopy]
+    LoadedCompletely = False
+    SavedCompletely = False
+    FilterOptions = []
+    Version = '7.74.00 Professional Edition'
+    LanguageID = 0
+    SortID = 0
+    SubLanguageID = 1
+    LocaleID = 1024
+    Left = 240
+    Top = 320
+  end
+end
