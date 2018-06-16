@@ -1,6 +1,7 @@
 object FormGenBarcode: TFormGenBarcode
   Left = 0
   Top = 0
+  Align = alClient
   Caption = #29983#25104#26465#30721
   ClientHeight = 826
   ClientWidth = 979
@@ -24,9 +25,6 @@ object FormGenBarcode: TFormGenBarcode
     PFurlboolean = False
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 0
-    ExplicitWidth = 779
-    ExplicitHeight = 803
     object cxMemo_barcode: TcxMemo
       Left = 22
       Top = 28
@@ -35,6 +33,7 @@ object FormGenBarcode: TFormGenBarcode
       PFurlboolean = False
       Lines.Strings = (
         'cxMemo_barcode')
+      Properties.ScrollBars = ssVertical
       Style.BorderColor = clWindowFrame
       Style.BorderStyle = ebs3D
       Style.HotTrack = False
@@ -48,8 +47,8 @@ object FormGenBarcode: TFormGenBarcode
       Width = 427
       Height = 750
       BorderStyle = bsNone
-      OutlineVisible = True
-      OutlineWidth = 121
+      OutlineVisible = False
+      OutlineWidth = 120
       ThumbnailVisible = False
       UseReportHints = True
     end
@@ -60,6 +59,12 @@ object FormGenBarcode: TFormGenBarcode
       Height = 50
       Action = act_generatebarcode
       TabOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
@@ -71,18 +76,30 @@ object FormGenBarcode: TFormGenBarcode
       Height = 50
       Caption = #28165#31354
       TabOrder = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       OnClick = cxButton_clearClick
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
     end
-    object cxButton3: TcxButton
+    object cxButton_print: TcxButton
       Left = 370
       Top = 140
       Width = 75
       Height = 50
-      Caption = 'cxButton3'
+      Action = act_print
       TabOrder = 3
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
@@ -158,7 +175,7 @@ object FormGenBarcode: TFormGenBarcode
       Parent = dxLayoutGroup2
       CaptionOptions.Text = 'cxButton3'
       CaptionOptions.Visible = False
-      Control = cxButton3
+      Control = cxButton_print
       ControlOptions.ShowBorder = False
       Index = 2
     end
@@ -177,12 +194,13 @@ object FormGenBarcode: TFormGenBarcode
     DataSetName = 'datasetBarcode'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
+    Preview = frxPreview1
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = #39044#35774
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43267.392035254630000000
-    ReportOptions.LastChange = 43267.400394930560000000
+    ReportOptions.CreateDate = 43267.392035254620000000
+    ReportOptions.LastChange = 43267.400394930550000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -370,6 +388,10 @@ object FormGenBarcode: TFormGenBarcode
     object act_generatebarcode: TAction
       Caption = #29983#25104
       OnExecute = act_generatebarcodeExecute
+    end
+    object act_print: TAction
+      Caption = #25171#21360
+      OnExecute = act_printExecute
     end
   end
   object cxImageList1: TcxImageList
@@ -561,5 +583,29 @@ object FormGenBarcode: TFormGenBarcode
           0000000000000000000000000000000000000000000000000004C59B6FFF7B60
           45A40705040F0000000200000000000000000000000000000000}
       end>
+  end
+  object dxAlertWindowManager1: TdxAlertWindowManager
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+    OptionsButtons.Buttons = <>
+    OptionsMessage.Caption.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Caption.Font.Color = clWindowText
+    OptionsMessage.Caption.Font.Height = -13
+    OptionsMessage.Caption.Font.Name = 'Tahoma'
+    OptionsMessage.Caption.Font.Style = [fsBold]
+    OptionsMessage.Text.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Text.Font.Color = clWindowText
+    OptionsMessage.Text.Font.Height = -11
+    OptionsMessage.Text.Font.Name = 'Tahoma'
+    OptionsMessage.Text.Font.Style = []
+    OptionsNavigationPanel.Font.Charset = DEFAULT_CHARSET
+    OptionsNavigationPanel.Font.Color = clWindowText
+    OptionsNavigationPanel.Font.Height = -11
+    OptionsNavigationPanel.Font.Name = 'Tahoma'
+    OptionsNavigationPanel.Font.Style = []
+    Left = 408
+    Top = 676
+    PixelsPerInch = 96
   end
 end

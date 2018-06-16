@@ -24,7 +24,8 @@ uses
   frxClass, frxPreview, frxDesgn, frxDBSet, Data.DB, kbmMemTable,
   dxSkinscxPCPainter, dxLayoutcxEditAdapters, dxLayoutContainer, cxClasses,
   dxLayoutControl, dxLayoutControlAdapters, dxSkinsdxBarPainter, dxBar, System.Actions,
-  Vcl.ActnList, System.ImageList, Vcl.ImgList, frxBarcode, dxAlertWindow;
+  Vcl.ActnList, System.ImageList, Vcl.ImgList, frxBarcode, dxAlertWindow,
+  dxLayoutLookAndFeels;
 
 type
   TFormGenBarcode = class(TForm)
@@ -41,7 +42,7 @@ type
     dxLayoutItem4: TdxLayoutItem;
     cxButton_clear: TcxButton;
     dxLayoutItem2: TdxLayoutItem;
-    cxButton3: TcxButton;
+    cxButton_print: TcxButton;
     dxLayoutItem5: TdxLayoutItem;
     frxReport_barcode: TfrxReport;
     frxDesigner_barcode: TfrxDesigner;
@@ -58,11 +59,15 @@ type
     act_clearmemo: TAction;
     act_generatebarcode: TAction;
     dxAlertWindowManager1: TdxAlertWindowManager;
+    act_print: TAction;
+    dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList;
+    dxLayoutStandardLookAndFeel1: TdxLayoutStandardLookAndFeel;
     procedure act_openfileExecute(Sender: TObject);
     procedure act_clearmemoExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure cxButton_clearClick(Sender: TObject);
     procedure act_generatebarcodeExecute(Sender: TObject);
+    procedure act_printExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,29 +87,33 @@ implementation
 procedure TFormGenBarcode.act_clearmemoExecute(Sender: TObject);
 begin
   cxMemo_barcode.Clear;
+  act_generatebarcode.Execute;
 end;
 
 procedure TFormGenBarcode.act_generatebarcodeExecute(Sender: TObject); //生成条码
 var
   i: Integer;
-  strline:string;
+  strline: string;
 begin
   kbm_barcode.EmptyTable;
-  for i := 0 to cxMemo_barcode.Lines.Count do
+  for i := 0 to cxMemo_barcode.Lines.Count - 1 do
   begin
-     strline := Trim(cxMemo_barcode.Lines[0]);
+    strline := Trim(cxMemo_barcode.Lines[0]);
+    if strline = '' then
+      Continue;
+
     if not checkBarcode(cxMemo_barcode.Lines[i]) then
     begin
       dxAlertWindowManager1.Show('生成条码', '请输入正确的条码！', 1);
       Exit;
     end;
 
-    if strline = '' then
-      Continue;
-
-
     addTable(cxMemo_barcode.Lines[i]);
   end;
+
+  frxReport_barcode.PrepareReport(True);
+  frxReport_barcode.ShowReport();
+
 end;
 
 procedure TFormGenBarcode.act_openfileExecute(Sender: TObject);
@@ -112,12 +121,18 @@ begin
   frxReport_barcode.DesignReport();   //设计fastreport报表
 end;
 
+procedure TFormGenBarcode.act_printExecute(Sender: TObject);
+begin
+  frxReport_barcode.PrepareReport;
+  frxReport_barcode.PrintOptions.ShowDialog := false;
+  frxReport_barcode.Print;
+end;
+
 procedure TFormGenBarcode.addTable(const barcode: string);
 begin
   kbm_barcode.Append;
   kbm_barcode.FieldByName('barcode').AsString := Trim(barcode);
   kbm_barcode.Post;
-
 end;
 
 function TFormGenBarcode.checkBarcode(const str: string): Boolean;
@@ -140,11 +155,24 @@ begin
 end;
 
 procedure TFormGenBarcode.FormCreate(Sender: TObject);
+var
+  strPath: string;
 begin
   act_clearmemo.Execute;
 
   if not kbm_barcode.Active then
     kbm_barcode.Open;
+
+  strPath := ExtractFilePath(Application.ExeName) + 'barcode.fr3';
+
+  if not FileExists(strPath) then
+  begin
+    Application.MessageBox('barcode.fr3模板文件不存在', '提示', MB_OK + MB_ICONSTOP);
+    Application.Terminate;
+  end;
+
+  frxReport_barcode.LoadFromFile(strPath);
+
 end;
 
 function TFormGenBarcode.IsHaveChinese(judgeStr: string; var posInt: integer): boolean;
@@ -169,7 +197,6 @@ begin
           posInt := count; // 设置包含汉字位置
           break; // 退出循环
         end;
-
     end;
 
     Inc(p);

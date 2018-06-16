@@ -1,6 +1,7 @@
 object FormGenBarcode: TFormGenBarcode
   Left = 0
   Top = 0
+  Align = alClient
   Caption = #29983#25104#26465#30721
   ClientHeight = 826
   ClientWidth = 979
@@ -24,65 +25,88 @@ object FormGenBarcode: TFormGenBarcode
     PFurlboolean = False
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 0
-    ExplicitWidth = 779
-    ExplicitHeight = 803
     object cxMemo_barcode: TcxMemo
-      Left = 22
-      Top = 28
+      Left = 27
+      Top = 36
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
       Lines.Strings = (
         'cxMemo_barcode')
+      ParentFont = False
+      Properties.ScrollBars = ssVertical
       Style.BorderColor = clWindowFrame
       Style.BorderStyle = ebs3D
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -16
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = []
       Style.HotTrack = False
+      Style.IsFontAssigned = True
       TabOrder = 0
       Height = 741
       Width = 291
     end
     object frxPreview1: TfrxPreview
-      Left = 489
-      Top = 30
+      Left = 486
+      Top = 38
       Width = 427
       Height = 750
       BorderStyle = bsNone
-      OutlineVisible = True
-      OutlineWidth = 121
+      OutlineVisible = False
+      OutlineWidth = 120
       ThumbnailVisible = False
       UseReportHints = True
     end
     object cxButton_generate: TcxButton
-      Left = 370
+      Left = 367
       Top = 28
       Width = 78
       Height = 50
-      Caption = #29983#25104
+      Action = act_generatebarcode
       TabOrder = 1
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
     end
     object cxButton_clear: TcxButton
-      Left = 370
+      Left = 367
       Top = 84
       Width = 75
       Height = 50
       Caption = #28165#31354
       TabOrder = 2
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       OnClick = cxButton_clearClick
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
     end
-    object cxButton3: TcxButton
-      Left = 370
+    object cxButton_print: TcxButton
+      Left = 367
       Top = 140
       Width = 75
       Height = 50
-      Caption = 'cxButton3'
+      Action = act_print
       TabOrder = 3
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
@@ -99,7 +123,43 @@ object FormGenBarcode: TFormGenBarcode
       Parent = dxLayoutAutoCreatedGroup1
       AlignHorz = ahClient
       AlignVert = avClient
+      CaptionOptions.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00030000000C0000000F0000000D000000060000000100000001000000040000
+        000D0000001100000012000000110000000E0000000000000000000000000000
+        00087E431BFF7C411AFF683213FF1C0C0457000000030000000107030119753A
+        17FF723916FF723715FF6E3414FF4A1D09F20000000000000000000000000000
+        00040D080427864E23F03D1F0CA00000000C0000000100000001000000072013
+        0850945827FF915324FF693514EA050201260000000000000000000000000000
+        000000000007502E149C572B11D50000000B000000000000000000000007502F
+        1697965A28FF854A20FF2D140790000000080000000000000000000000000000
+        0000000000031F130941753E18FF100803380000000D0000000D020100188953
+        25E9985C2BFF713B17FD09040129000000030000000000000000000000000000
+        0000000000000000000978471FDD894F22FF884D20FF864C20FF9A602CFF9A61
+        2CFF935828FF49240DB90000000A000000000000000000000000000000000000
+        000000000000000000044C31178675461ED8000000130000001159381B9F9D63
+        2EFF864D20FF2010065B00000004000000000000000000000000000000000000
+        00000000000000000002130C0629834B1FFF150C053702010110935F2DED9D63
+        2FFF703E19E80101000E00000001000000000000000000000000000000000000
+        00000000000000000000000000066D411DC5432811893322105FA26A32FF975D
+        2BFF3D220E8A0000000500000000000000000000000000000000000000000000
+        00000000000000000000000000033D27126C7C4F23D6714B24B7A46D33FF8C54
+        25FC0E0803270000000200000000000000000000000000000000000000000000
+        00000000000000000000000000020A0703179E6B32F7A56F35FCA26B33FF6239
+        19BA000000060000000000000000000000000000000000000000000000000000
+        000000000000000000000000000000000004714D26B1A97338FF9D662EFF2D1C
+        0B5A000000020000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000235251254AA7439FF8A5829E90201
+        0009000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000200000004000000040000
+        0001000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000}
       CaptionOptions.Text = #36755#20837#26465#30721
+      LayoutLookAndFeel = dxLayoutStandardLookAndFeel1
       ButtonOptions.Buttons = <>
       Index = 0
     end
@@ -129,7 +189,43 @@ object FormGenBarcode: TFormGenBarcode
       Parent = dxLayoutAutoCreatedGroup1
       AlignHorz = ahClient
       AlignVert = avClient
+      CaptionOptions.Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000020000
+        000A0000000F0000001100000011000000120000001200000013000000130000
+        00130000001300000014000000130000000D0000000300000000000000098159
+        4BC1B37B67FFB27B66FFB27A66FFB27864FFB17965FFB17965FFB17965FFB177
+        65FFB17763FFB07664FFB07664FF7E5548C50000000C000000000000000DB57D
+        6BFFFDFBF9FFFBF6F2FFFBF5F2FFFAF5F1FFFBF4EFFFF9F3EEFFF9F3EEFFF9F2
+        EEFFFAF2ECFFF8F0EBFFF9F0EAFFB17866FF00000012000000000000000DB781
+        6DFFFDFBFAFFF7EEE7FFF8EDE7FFF7EDE7FFF7EDE6FFF6ECE5FFF6ECE5FFF6EC
+        E5FFF8EBE4FFF6EBE4FFF9F1ECFFB37A68FF00000013000000000000000DB984
+        72FFFDFCFBFFF8EFE8FFB48475FFC69B8DFFC79B8CFFC69B8CFFC69A8BFFC699
+        8BFFC59989FFF6ECE5FFFAF2EEFFB57D6BFF00000012000000000000000CBB87
+        75FFFEFCFBFFF9F0EAFFF8F0EAFFF8EFE9FFF8EFE8FFF8EEE9FFF8EEE9FFF8EE
+        E7FFF8EEE7FFF8EDE7FFFAF4EFFFB7816EFF00000011000000000000000BBE8A
+        79FFFEFDFCFFF9F2EDFFB88B7CFFCAA193FFCAA193FFCAA192FFCAA192FFC9A0
+        91FFC99F90FFF8EFE8FFFAF5F1FFBA8571FF00000010000000000000000AC08F
+        7EFFFEFDFDFFFAF3EFFFFAF4EEFFFAF3EEFFFAF1ECFFF9F1EBFFF9F1EBFFF9F0
+        EBFFF9F1EBFFF8F0EAFFFBF6F3FFBB8975FF0000000F0000000000000009C493
+        80FFFEFEFDFFFBF5F1FF1461C5FF1360C5FF125EC3FFFAF3EFFF105CC2FF0F5B
+        C2FF0E5AC1FFF9F1EBFFFCF7F4FFBE8B79FF0000000F0000000000000009C696
+        86FFFEFEFDFFFAF5F3FFF3F1F1FF5B90D3FFFBF5F0FFFBF5F0FF4A83CFFF1D65
+        C6FFD9DFE8FFFAF3EFFFFDF9F7FFC18E7DFF0000000E0000000000000008C99B
+        8AFFFEFEFEFFFBF6F4FFFBF6F4FFB4C9E6FF1867C9FF1766C8FF1665C8FF8FB0
+        DDFFFBF5F0FFFAF5F0FFFDFAF8FFC39382FF0000000D0000000000000007C99E
+        8DFFFFFEFEFFFCF8F6FFFCF7F5FFF9F5F5FF8AB0DFFF79A6DCFF2470CBFFF1EF
+        F1FFFCF6F2FFFBF6F1FFFDFBF9FFC69786FF0000000C0000000000000006CEA1
+        90FFFFFFFEFFFDF9F7FFFDF9F7FFFCF8F7FF99BCE4FF2B78D0FF76A5DCFFFBF7
+        F5FFFBF7F4FFFCF7F3FFFDFCFAFFC89B8AFF0000000B0000000000000006CEA3
+        93FFFFFFFFFFFDFAF9FFFDFAF8FFFDFAF8FFEBEEF4FF297AD1FFD0DDEFFFFBF8
+        F6FFFBF7F6FFFCF7F5FFFEFCFCFFCB9D8DFF0000000B0000000000000005D0A6
+        96FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFEFEFFFEFEFEFFFEFEFEFFFFFE
+        FEFFFEFEFEFFFEFEFEFFFEFEFDFFCDA191FF0000000900000000000000039C7C
+        71C0D2A898FFD1A897FFD1A897FFD1A797FFD0A696FFD0A696FFD0A696FFD0A6
+        95FFD0A595FFCFA595FFCFA494FF98796EC20000000600000000}
       CaptionOptions.Text = #26465#30721#26126#32454
+      LayoutLookAndFeel = dxLayoutStandardLookAndFeel1
       ButtonOptions.Buttons = <>
       LayoutDirection = ldHorizontal
       Index = 2
@@ -158,7 +254,7 @@ object FormGenBarcode: TFormGenBarcode
       Parent = dxLayoutGroup2
       CaptionOptions.Text = 'cxButton3'
       CaptionOptions.Visible = False
-      Control = cxButton3
+      Control = cxButton_print
       ControlOptions.ShowBorder = False
       Index = 2
     end
@@ -177,6 +273,7 @@ object FormGenBarcode: TFormGenBarcode
     DataSetName = 'datasetBarcode'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
+    Preview = frxPreview1
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = #39044#35774
@@ -364,8 +461,16 @@ object FormGenBarcode: TFormGenBarcode
       OnExecute = act_openfileExecute
     end
     object act_clearmemo: TAction
-      Caption = 'act_clearmemo'
+      Caption = #28165#31354
       OnExecute = act_clearmemoExecute
+    end
+    object act_generatebarcode: TAction
+      Caption = #29983#25104
+      OnExecute = act_generatebarcodeExecute
+    end
+    object act_print: TAction
+      Caption = #25171#21360
+      OnExecute = act_printExecute
     end
   end
   object cxImageList1: TcxImageList
@@ -557,5 +662,47 @@ object FormGenBarcode: TFormGenBarcode
           0000000000000000000000000000000000000000000000000004C59B6FFF7B60
           45A40705040F0000000200000000000000000000000000000000}
       end>
+  end
+  object dxAlertWindowManager1: TdxAlertWindowManager
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+    OptionsButtons.Buttons = <>
+    OptionsMessage.Caption.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Caption.Font.Color = clWindowText
+    OptionsMessage.Caption.Font.Height = -13
+    OptionsMessage.Caption.Font.Name = 'Tahoma'
+    OptionsMessage.Caption.Font.Style = [fsBold]
+    OptionsMessage.Text.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Text.Font.Color = clWindowText
+    OptionsMessage.Text.Font.Height = -11
+    OptionsMessage.Text.Font.Name = 'Tahoma'
+    OptionsMessage.Text.Font.Style = []
+    OptionsNavigationPanel.Font.Charset = DEFAULT_CHARSET
+    OptionsNavigationPanel.Font.Color = clWindowText
+    OptionsNavigationPanel.Font.Height = -11
+    OptionsNavigationPanel.Font.Name = 'Tahoma'
+    OptionsNavigationPanel.Font.Style = []
+    Left = 408
+    Top = 676
+    PixelsPerInch = 96
+  end
+  object dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList
+    Left = 552
+    Top = 200
+    object dxLayoutStandardLookAndFeel1: TdxLayoutStandardLookAndFeel
+      GroupOptions.CaptionOptions.Font.Charset = DEFAULT_CHARSET
+      GroupOptions.CaptionOptions.Font.Color = clWindowText
+      GroupOptions.CaptionOptions.Font.Height = -16
+      GroupOptions.CaptionOptions.Font.Name = 'Tahoma'
+      GroupOptions.CaptionOptions.Font.Style = [fsBold]
+      GroupOptions.CaptionOptions.UseDefaultFont = False
+      ItemOptions.CaptionOptions.Font.Charset = DEFAULT_CHARSET
+      ItemOptions.CaptionOptions.Font.Color = clWindowText
+      ItemOptions.CaptionOptions.Font.Height = -13
+      ItemOptions.CaptionOptions.Font.Name = 'Tahoma'
+      ItemOptions.CaptionOptions.Font.Style = []
+      ItemOptions.CaptionOptions.UseDefaultFont = False
+    end
   end
 end

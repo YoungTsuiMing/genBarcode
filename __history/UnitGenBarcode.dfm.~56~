@@ -1,6 +1,7 @@
 object FormGenBarcode: TFormGenBarcode
   Left = 0
   Top = 0
+  Align = alClient
   Caption = #29983#25104#26465#30721
   ClientHeight = 826
   ClientWidth = 979
@@ -48,8 +49,8 @@ object FormGenBarcode: TFormGenBarcode
       Width = 427
       Height = 750
       BorderStyle = bsNone
-      OutlineVisible = True
-      OutlineWidth = 121
+      OutlineVisible = False
+      OutlineWidth = 120
       ThumbnailVisible = False
       UseReportHints = True
     end
@@ -58,7 +59,7 @@ object FormGenBarcode: TFormGenBarcode
       Top = 28
       Width = 78
       Height = 50
-      Caption = #29983#25104
+      Action = act_generatebarcode
       TabOrder = 1
       PFrigth = False
       PFsearch = False
@@ -71,16 +72,17 @@ object FormGenBarcode: TFormGenBarcode
       Height = 50
       Caption = #28165#31354
       TabOrder = 2
+      OnClick = cxButton_clearClick
       PFrigth = False
       PFsearch = False
       PFurlboolean = False
     end
-    object cxButton3: TcxButton
+    object cxButton_print: TcxButton
       Left = 370
       Top = 140
       Width = 75
       Height = 50
-      Caption = 'cxButton3'
+      Caption = #25171#21360
       TabOrder = 3
       PFrigth = False
       PFsearch = False
@@ -157,7 +159,7 @@ object FormGenBarcode: TFormGenBarcode
       Parent = dxLayoutGroup2
       CaptionOptions.Text = 'cxButton3'
       CaptionOptions.Visible = False
-      Control = cxButton3
+      Control = cxButton_print
       ControlOptions.ShowBorder = False
       Index = 2
     end
@@ -176,6 +178,7 @@ object FormGenBarcode: TFormGenBarcode
     DataSetName = 'datasetBarcode'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
+    Preview = frxPreview1
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = #39044#35774
@@ -363,8 +366,16 @@ object FormGenBarcode: TFormGenBarcode
       OnExecute = act_openfileExecute
     end
     object act_clearmemo: TAction
-      Caption = 'act_clearmemo'
+      Caption = #28165#31354
       OnExecute = act_clearmemoExecute
+    end
+    object act_generatebarcode: TAction
+      Caption = #29983#25104
+      OnExecute = act_generatebarcodeExecute
+    end
+    object act_print: TAction
+      Caption = 'act_print'
+      OnExecute = act_printExecute
     end
   end
   object cxImageList1: TcxImageList
@@ -556,5 +567,29 @@ object FormGenBarcode: TFormGenBarcode
           0000000000000000000000000000000000000000000000000004C59B6FFF7B60
           45A40705040F0000000200000000000000000000000000000000}
       end>
+  end
+  object dxAlertWindowManager1: TdxAlertWindowManager
+    PFrigth = False
+    PFsearch = False
+    PFurlboolean = False
+    OptionsButtons.Buttons = <>
+    OptionsMessage.Caption.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Caption.Font.Color = clWindowText
+    OptionsMessage.Caption.Font.Height = -13
+    OptionsMessage.Caption.Font.Name = 'Tahoma'
+    OptionsMessage.Caption.Font.Style = [fsBold]
+    OptionsMessage.Text.Font.Charset = DEFAULT_CHARSET
+    OptionsMessage.Text.Font.Color = clWindowText
+    OptionsMessage.Text.Font.Height = -11
+    OptionsMessage.Text.Font.Name = 'Tahoma'
+    OptionsMessage.Text.Font.Style = []
+    OptionsNavigationPanel.Font.Charset = DEFAULT_CHARSET
+    OptionsNavigationPanel.Font.Color = clWindowText
+    OptionsNavigationPanel.Font.Height = -11
+    OptionsNavigationPanel.Font.Name = 'Tahoma'
+    OptionsNavigationPanel.Font.Style = []
+    Left = 408
+    Top = 676
+    PixelsPerInch = 96
   end
 end
