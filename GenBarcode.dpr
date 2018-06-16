@@ -11,7 +11,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Windows10');
+  TStyleManager.TrySetStyle('Sapphire Kamri');
   Application.CreateForm(TFormGenBarcode, FormGenBarcode);
   Application.Run;
 end.

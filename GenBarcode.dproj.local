@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2018-06-15 17:11:51.112,=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018-06-15 17:12:05.770,D:\delphi source\GenBarcode\Unit1.dfm=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2018-06-15 17:12:05.770,D:\delphi source\GenBarcode\Unit1.pas=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018-06-15 17:16:57.023,D:\delphi source\GenBarcode\ProjectGenBarcode.dproj=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2018-06-15 17:17:09.525,D:\delphi source\GenBarcode\GenBarcode.dproj=D:\delphi source\GenBarcode\ProjectGenBarcode.dproj</Transaction>
-    <Transaction>2018-06-15 17:20:51.146,D:\delphi source\GenBarcode\UnitGenBarcode.dfm=D:\delphi source\GenBarcode\Unit1.dfm</Transaction>
-    <Transaction>2018-06-15 17:20:51.146,D:\delphi source\GenBarcode\UnitGenBarcode.pas=D:\delphi source\GenBarcode\Unit1.pas</Transaction>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.146,D:\delphi source\GenBarcode\UnitGenBarcode.pas=D:\delphi source\GenBarcode\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.770,D:\delphi source\GenBarcode\Unit1.dfm=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.146,D:\delphi source\GenBarcode\UnitGenBarcode.dfm=D:\delphi source\GenBarcode\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.112,=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.023,D:\delphi source\GenBarcode\ProjectGenBarcode.dproj=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.770,D:\delphi source\GenBarcode\Unit1.pas=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.525,D:\delphi source\GenBarcode\GenBarcode.dproj=D:\delphi source\GenBarcode\ProjectGenBarcode.dproj</Transaction>
   </Transactions>
 </BorlandProject>
