@@ -62,6 +62,8 @@ type
     act_print: TAction;
     dxLayoutLookAndFeelList1: TdxLayoutLookAndFeelList;
     dxLayoutStandardLookAndFeel1: TdxLayoutStandardLookAndFeel;
+    dxBarButton_generateBarcode: TdxBarButton;
+    dxBarButton2: TdxBarButton;
     procedure act_openfileExecute(Sender: TObject);
     procedure act_clearmemoExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
